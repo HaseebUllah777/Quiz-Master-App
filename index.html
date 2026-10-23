@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Technology Quiz | QuizMaster</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="QuizMaster home"><span class="brand-mark">Q</span> QuizMaster</a>
+    <div class="header-actions">
+      <span class="small-label">CSC336 · Web Technology</span>
+      <button id="themeBtn" class="icon-btn" type="button" aria-label="Toggle dark mode">🌙 Dark mode</button>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <section class="welcome-row">
+      <div>
+        <p class="eyebrow">LEARN · PRACTICE · IMPROVE</p>
+        <h1>Knowledge Check</h1>
+        <p class="muted">Answer the questions before the timer runs out.</p>
+      </div>
+      <div class="timer-card" aria-live="polite">
+        <span class="timer-icon">◷</span>
+        <div><span class="timer-caption">TIME LEFT</span><strong id="timer">02:00</strong></div>
+      </div>
+    </section>
+
+    <section class="quiz-card" aria-labelledby="questionTitle">
+      <div class="quiz-topline">
+        <span id="questionCounter">Question 1 of 5</span>
+        <span id="scorePreview">Score: 0</span>
+      </div>
+      <div class="progress-track" id="progressTrack" aria-label="Quiz progress"></div>
+      <div class="question-area">
+        <span class="question-tag">MULTIPLE CHOICE</span>
+        <h2 id="questionTitle">Loading question...</h2>
+        <p class="muted" id="questionHelp">Choose one answer below.</p>
+        <div id="options" class="options-list"></div>
+        <p id="feedback" class="feedback" role="status"></p>
+      </div>
+      <div class="quiz-footer">
+        <button id="restartBtn" class="btn btn-quiet" type="button">↻ Restart</button>
+        <button id="nextBtn" class="btn btn-primary" type="button" disabled>Next question →</button>
+      </div>
+    </section>
+
+    <section id="resultCard" class="result-card hidden" aria-live="polite">
+      <div class="result-icon">✓</div>
+      <p class="eyebrow">QUIZ COMPLETED</p>
+      <h2 id="resultHeading">Great effort!</h2>
+      <p id="resultSummary" class="muted"></p>
+      <div class="result-stats">
+        <div><span>Correct</span><strong id="correctCount">0</strong></div>
+        <div><span>Incorrect / skipped</span><strong id="wrongCount">0</strong></div>
+        <div><span>Percentage</span><strong id="percentage">0%</strong></div>
+      </div>
+      <div class="result-actions">
+        <button id="downloadBtn" class="btn btn-primary" type="button">↓ Download PDF result</button>
+        <button id="playAgainBtn" class="btn btn-quiet" type="button">Play again</button>
+      </div>
+      <p class="tiny-note">The PDF is created in your browser. No server or account is required.</p>
+    </section>
+
+    <p class="page-note">Built with HTML, CSS and JavaScript · Responsive on mobile, tablet and desktop</p>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
